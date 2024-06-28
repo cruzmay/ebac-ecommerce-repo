@@ -1,0 +1,16 @@
+.footer {
+  grid-area: footer;
+  background-color: $primary-color;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: $spacing-medium;
+  &__column {
+    &__list {
+      list-style: none;
+      &s__item {
+        color: $ligth-color;
+      }
+    }
+  }
+}

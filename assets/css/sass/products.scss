@@ -1,0 +1,51 @@
+/* products main CSS module */
+%price-tag {
+  background: $accent-color;
+  padding: calc($spacing-tiny - 4px);
+  border-radius: $border-radius;
+  width: 50%;
+  text-align: center;
+  font-weight: 900;
+  color: $ligth-color;
+  font-size: 0.9em;
+}
+
+.products {
+  grid-area: main;
+  background-color: $ligth-color;
+  padding: $spacing-small;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: $spacing-small;
+  &__detail {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-tiny;
+    max-width: 100%;
+    &__image {
+      img {
+        width: 100%;
+      }
+    }
+    &__price {
+      @extend %price-tag;
+      &--offert {
+        @extend %price-tag;
+        background-color: $warning-color;
+      }
+      &--sold-out {
+        @extend %price-tag;
+        background-color: $danger-color;
+      }
+    }
+    &__description {
+      font-size: 0.8em;
+    }
+  }
+  @media (max-width: $tablet-breakpoint) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media (max-width: $mobile-breakpoint) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

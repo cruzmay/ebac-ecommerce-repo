@@ -1,0 +1,33 @@
+/* header CSS module */
+.header {
+  grid-area: nav;
+  background-color: $primary-color;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: $spacing-medium;
+  &__logo {
+    &__img {
+      &_svg {
+        @include svgElement;
+      }
+    }
+  }
+  &__nav {
+    &__list {
+      list-style: none;
+      display: flex;
+      color: $ligth-color;
+      gap: $spacing-small;
+      &__item {
+        color: inherit;
+        i {
+          color: inherit;
+        }
+      }
+    }
+  }
+  @media (max-width: $mobile-breakpoint) {
+    padding: $spacing-tiny;
+  }
+}
